@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EV Charging Station Finder</title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.34/esri/themes/light/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://js.arcgis.com/4.34/"></script>
+</head>
+
+<body>
+
+    <!-- FILTERS -->
+    <div id="filters">
+
+        <label for="connector">Connector Type</label>
+        <select id="connector">
+            <option value="">All</option>
+            <option value="CCS">CCS</option>
+            <option value="CHAdeMO">CHAdeMO</option>
+        </select>
+
+        <label for="minPower">Minimum Power (kW)</label>
+        <input type="number" id="minPower" min="0" placeholder="Enter minimum power">
+
+        <label for="bufferDistance">Buffer Distance</label>
+
+        <select id="bufferDistance">
+            <option value="2">2 km</option>
+            <option value="5">5 km</option>
+            <option value="10">10 km</option>
+        </select>
+
+        <button id="applyFilter">Apply</button>
+    </div>
+
+    <div id="mapContainer"></div>
+
+    <div id="resultsPanel">
+        <h3>Nearby Stations</h3>
+        <div id="addressInfo">Draw a point or polygon to get location.</div>
+        <div id="areaInfo">Draw a point or polygon</div>
+        <div id="stationResults">No stations selected.</div>
+    </div>
+    <script src="./script.js"></script>
+
+</body>
+</html>
